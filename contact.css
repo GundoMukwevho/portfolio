@@ -1,0 +1,165 @@
+/* Contact Page Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9; /* light theme */
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85); /* darker transparency */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: padding 0.3s ease, background 0.3s ease;
+
+}
+
+
+nav {
+  background: #333;
+  padding: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #00bfff;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00bfff;
+  transform: scale(1.1);
+  text-shadow: 0 0 8px rgba(255, 152, 0, 0.6); /* glow effect */
+}
+
+.nav-links img {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%); /* makes icons white */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #00bfff;
+}
+
+/* Contact Section */
+#contact {
+  max-width: 900px;
+  margin: 0 auto;         /* center horizontally only */
+  padding: 50px 20px;     /* top padding pushes content down like Certifications */
+  flex: 1;                /* lets content fill vertical space without centering */
+  text-align: left;
+}
+
+#contact h1 {
+  font-size: 3rem;       /* match Certifications */
+  margin-bottom: 50px;   /* same spacing as Certifications */
+  color: #222;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 12px 0;
+  color: #555;
+}
+
+/* Links */
+#contact a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  color: #005fa3;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto; /* always push footer to bottom */
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Content container */
+.container {
+  max-width: 1000px;        /* keeps content centered */
+  margin: 40px auto;        /* vertical space + center horizontally */
+  padding: 40px;            /* breathing room inside */
+  background: rgba(255, 255, 255, 0.9); /* light block look */
+  border-radius: 12px;      /* rounded corners */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* subtle shadow */
+}

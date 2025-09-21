@@ -1,0 +1,291 @@
+/* Certifications Page Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85); /* darker transparency */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: padding 0.3s ease, background 0.3s ease;
+
+}
+
+
+nav {
+  background: #333;
+  padding: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #00bfff;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00bfff;
+  transform: scale(1.1);
+  text-shadow: 0 0 8px rgba(255, 152, 0, 0.6); /* glow effect */
+}
+
+.nav-links img {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%); /* makes icons white */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #00bfff;
+}
+
+/* Section Title */
+#certifications {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#certifications h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+/* Certificate Grid */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Certificate Card */
+.cert-card {
+  background: linear-gradient(145deg, #ffffff, #e0f7ff);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.25);
+}
+
+.cert-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.cert-card img:hover {
+  transform: scale(1.05);
+}
+
+.cert-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #0077cc;
+}
+
+.cert-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  border-radius: 12px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 0;
+}
+
+
+/* PDF Button */
+.btn-download {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #2196f3;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-download:hover {
+  background: #1976d2;
+}
+
+/* Button Group */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Buttons (slightly smaller) */
+.btn-download,
+.btn-view {
+  display: inline-block;
+  padding: 0.5rem 1rem;  /* smaller than before */
+  font-size: 0.9rem;     /* slightly reduced */
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-weight: 500;
+}
+
+/* Download Button */
+.btn-download {
+  background: #2196f3;
+  color: #fff;
+}
+
+.btn-download:hover {
+  background: #1976d2;
+}
+
+/* View Button */
+.btn-view {
+  background: #4caf50;
+  color: #fff;
+}
+
+.btn-view:hover {
+  background: #388e3c;
+}
+
+/* Responsive: stack buttons vertically on small screens */
+@media (max-width: 480px) {
+  .btn-group {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .btn-download,
+  .btn-view {
+    width: 100%;
+  }
+}
+
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
