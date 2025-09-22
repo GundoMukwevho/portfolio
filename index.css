@@ -638,6 +638,13 @@ html {
   height: 200%;
   background: radial-gradient(circle at center, rgba(0,191,255,0.15), transparent 70%);
   animation: move-bg 15s linear infinite;
+  z-index: 0; /* keep it in the background */
+}
+
+.hero-text,
+.hero-image {
+  position: relative;
+  z-index: 1; /* make sure text + buttons + image are clickable */
 }
 
 @keyframes move-bg {
@@ -738,3 +745,5 @@ html {
   50%  { left: 100px; }  /* move right */
   100% { left: 0;   }    /* back to start */
 }
+
+
