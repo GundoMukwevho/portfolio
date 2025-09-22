@@ -723,3 +723,18 @@ html {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* subtle shadow */
 }
 
+
+.line {
+  width: 150px;                 /* length of the line */
+  border: 3px solid #fdfdfd;       /* thickness & color */
+  border-radius: 3px;
+  margin: 50px auto;            /* spacing & centering */
+  animation: hop 2s infinite;   /* apply animation */
+  position: relative;           /* needed for movement */
+}
+
+@keyframes hop {
+  0%   { left: 0;   }
+  50%  { left: 100px; }  /* move right */
+  100% { left: 0;   }    /* back to start */
+}
