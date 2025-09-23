@@ -5,74 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Sierra-Royal</title>
   <link rel="stylesheet" href="projects.css">
-</head>
 
-<script src="script.js"></script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
 
 <body>
   <nav>
-    <div class="logo">GV</div>
+    <div class="logo"></div>
     <ul class="nav-links">
       <li><a href="index.html"><img src="warehouse.png" alt="Home"> Home</a></li>
       <li><a href="about.html"><img src="user.png" alt="About"> About</a></li>
-      <li><a href="projects.html"><img src="folder.png" alt="Projects"> Projects</a></li>
+      <li><a href="projects.html" class="active"><img src="folder.png" alt="Projects"> Projects</a></li>
       <li><a href="certifications.html"><img src="scroll.png" alt="Certs"> Certificates</a></li>
       <li><a href="contact.html"><img src="mail.png" alt="Contact"> Contact</a></li>
     </ul>
   </nav>
 
   <section id="projects">
-  <h1>My Projects</h1>
+    <h1>My Projects</h1>
 
-  <!------------------------------------------------------------------------ Project Card --------------------------------------------------------------------------->
-  <div class="project-card">
-    <h2>Checkers60 App</h2>
-   
-   
-    <p>
-      The Checkers60 app is a Python-based shopping cart application created in Visual Studio Code. 
-      It simulates a retail environment where users can browse items, add to cart, and check out.
-    </p>
+    <!-- Project Card 1 -->
+    <div class="project-card">
+      <h2>Checkers60 App</h2>
+      <p>
+        The Checkers60 app is a Python-based shopping cart application created in Visual Studio Code. 
+        It simulates a retail environment where users can browse items, add to cart, and check out.
+      </p>
 
-    <!-- Action Buttons -->
-    <div class="project-buttons">
-      <a href="https://gundom.pythonanywhere.com/" target="_blank" class="btn run-btn">▶ Run Project</a>
-      <a href="https://github.com/GundoMukwevho/Checkers60-Trolley-Cart.git" target="_blank" class="btn code-btn">💻 View Code</a>
+      <!-- Swiper -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="shoppingcartimage.png" alt="Checkers Screenshot 1"></div>
+          <div class="swiper-slide"><img src="projectscreen.png" alt="Checkers Screenshot 2"></div>
+          <div class="swiper-slide"><img src="projectimagelast.png" alt="Checkers Screenshot 3"></div>
+        </div>
+        <!-- Pagination + Arrows -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <div class="project-buttons">
+        <a href="https://gundom.pythonanywhere.com/" target="_blank" class="btn run-btn">▶ Run Project</a>
+        <a href="https://github.com/GundoMukwevho/Checkers60-Trolley-Cart.git" target="_blank" class="btn code-btn">💻 View Code</a>
+      </div>
     </div>
-     </div>
- <!----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
+    <!-- Project Card 2 -->
+    <div class="project-card">
+      <h2>Portfolio Website</h2>
+      <p>
+        A modern portfolio site built with HTML, CSS, and JavaScript showcasing my skills, projects, and certifications.
+      </p>
 
+      <!-- Swiper -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="portfolioimage.png" alt="Portfolio Screenshot 1"></div>
+          <div class="swiper-slide"><img src="portfscreen.png" alt="Portfolio Screenshot 2"></div>
+          <div class="swiper-slide"><img src="realportf.png" alt="Portfolio Screenshot 3"></div>
+        </div>
+        <!-- Pagination + Arrows -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
 
-  <!------------------------------------------------------------------------ Project Card --------------------------------------------------------------------------->
-  <div class="project-card">
-    <h2>Placeholder for project 2</h2>
-    <p>
-      random text here
-    </p>
-
-    <!-- Action Buttons -->
-    <div class="project-buttons">
-      <a href="https://your-live-demo-link.com" target="_blank" class="btn run-btn">▶ Run Project</a>
-      <a href="https://github.com/GundoMukwevho/Checkers60-Trolley-Cart" target="_blank" class="btn code-btn">💻 View Code</a>
+      <div class="project-buttons">
+        <a href="index.html" class="btn run-btn">▶ View Site</a>
+        <a href="https://github.com/GundoMukwevho/portfolio.git" target="_blank" class="btn code-btn">💻 View Code</a>
+      </div>
     </div>
- <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+  </section>
 
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Sierra-Royal | Built with ❤️ by GV Mukwevho</p>
+  </footer>
 
-
-
-
-
-
-
-
-
-</section>
-<!-- Footer -->
-<footer>
-  <p>© 2025 Sierra-Royal | Built with ❤️ by GV Mukwevho</p>
-</footer>
-
-
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      new Swiper(".swiper", {
+        loop: true,
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      });
+    });
+  </script>
 </body>
 </html>

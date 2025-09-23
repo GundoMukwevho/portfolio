@@ -1,22 +1,29 @@
-// Highlight current page in nav
+// Run after DOM loads
 document.addEventListener("DOMContentLoaded", () => {
+  // Highlight current page
   const navLinks = document.querySelectorAll("nav ul li a");
   const currentPage = window.location.pathname.split("/").pop();
-
   navLinks.forEach(link => {
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
   });
-});
 
-// Certificate modal logic
-document.addEventListener("DOMContentLoaded", () => {
+  // Skills toggle
+  const toggleButton = document.getElementById("toggle-skills");
+  const views = document.querySelectorAll(".skills-view");
+  if (toggleButton && views.length > 0) {
+    toggleButton.addEventListener("click", () => {
+      views.forEach(v => v.classList.toggle("active"));
+    });
+  }
+
+  // Certificate modal
   const modal = document.getElementById("cert-modal");
   const modalImg = document.getElementById("modal-img");
   const captionText = document.getElementById("caption");
   const certImgs = document.querySelectorAll(".cert-img");
-  const closeBtn = document.getElementsByClassName("close")[0];
+  const closeBtn = document.querySelector(".close");
 
   if (modal && modalImg && captionText && certImgs.length > 0) {
     certImgs.forEach(img => {
@@ -26,62 +33,24 @@ document.addEventListener("DOMContentLoaded", () => {
         captionText.textContent = img.alt || "";
       });
     });
-
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => (modal.style.display = "none"));
-    }
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    });
+    if (closeBtn) closeBtn.addEventListener("click", () => (modal.style.display = "none"));
+    modal.addEventListener("click", e => { if (e.target === modal) modal.style.display = "none"; });
   }
-});
 
-
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-};
-
-// Close modal when clicking outside the image
-modal.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
-
-
-
-// Navbar shrink effect
-document.addEventListener("DOMContentLoaded", () => {
+  // Navbar shrink effect
   const header = document.querySelector("header") || document.querySelector("nav");
-
   if (header) {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        header.classList.add("shrink");
-      } else {
-        header.classList.remove("shrink");
-      }
-    };
+    const handleScroll = () => header.classList.toggle("shrink", window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // run once on load
+    handleScroll();
   }
-});
 
-
-document.addEventListener("DOMContentLoaded", () => {
+  // Animate elements on scroll
   const animatedElements = document.querySelectorAll(".slide-in-left, .slide-in-right, .slide-in-bottom");
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = "running";
-      }
+      if (entry.isIntersecting) entry.target.style.animationPlayState = "running";
     });
   }, { threshold: 0.2 });
-
-  animatedElements.forEach(el => {
-    el.style.animationPlayState = "paused"; // pause until in view
-    observer.observe(el);
-  });
+  animatedElements.forEach(el => observer.observe(el));
 });
-
