@@ -101,6 +101,7 @@ nav ul li a.active {
   margin-bottom: 20px;
 }
 
+
 #about p {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -160,4 +161,194 @@ html {
   background: rgba(255, 255, 255, 0.9); /* light block look */
   border-radius: 12px;      /* rounded corners */
   box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* subtle shadow */
+}
+
+/* About Section */
+#about {
+  padding: 60px 20px;
+  background: #f5f5f5;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  gap: 40px;
+}
+
+.about-photo img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #00bcd4;
+  animation: fadeIn 2s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-photo {
+  perspective: 1000px; /* needed for 3D tilt */
+  display: inline-block;
+}
+
+.about-photo img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #00bcd4;
+  transition: transform 0.2s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.about-photo img:hover {
+  box-shadow: 0 0 25px rgba(0, 188, 212, 0.6);
+}
+
+
+/* Hover effect */
+.about-photo img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 188, 212, 0.6);
+}
+
+
+.about-text {
+  max-width: 600px;
+  animation: slideIn 2s ease;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.about-text .highlight {
+  color: #00bcd4;
+}
+
+.typewriter {
+  font-size: 1.5rem;
+  color: #555;
+  overflow: hidden;
+  border-right: .15em solid #00bcd4;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink .75s step-end infinite;
+  margin-bottom: 20px;
+}
+
+/* Timeline Section */
+#timeline {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+#timeline h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.timeline-item {
+  position: relative;
+  margin: 20px auto;
+  max-width: 600px;
+  padding-left: 20px;
+  border-left: 3px solid #00bcd4;
+}
+
+.timeline-content h3 {
+  color: #00bcd4;
+  margin-bottom: 5px;
+}
+
+/* Skills Section */
+#skills {
+  padding: 60px 20px;
+  background: #f5f5f5;
+}
+
+#skills h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skill {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.skill p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.skill-bar {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.skill-bar span {
+  display: block;
+  height: 20px;
+  background: #00bcd4;
+  width: 0;
+  border-radius: 20px;
+  animation: growBar 2s forwards;
+}
+
+/* Animations */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #00bcd4 }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes growBar {
+  from { width: 0 }
+  to { width: var(--skill-width, 80%) }
+}
+
+
+/* Timeline Animation */
+.timeline-item {
+  opacity: 0;
+  transform: translateX(100px); /* default slide from right */
+  transition: all 0.8s ease-out;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-item:nth-child(even) {
+  transform: translateX(-100px); /* slide from left */
+}
+
+.timeline-item:nth-child(even).visible {
+  transform: translateX(0);
+}
+
+.timeline-item {
+  opacity: 1 !important;
+  transform: none !important;
 }
